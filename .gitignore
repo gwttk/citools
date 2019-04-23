@@ -112,3 +112,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+smartproxy-1.1.8.jar
+smartproxy-1.1.8.zip
