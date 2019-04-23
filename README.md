@@ -1,4 +1,4 @@
-## citools
+## citools is "continuous integration (CI) tools"
 
 ## QuickStart
 
