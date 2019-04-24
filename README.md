@@ -40,7 +40,7 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
         on:
             tags: true
     ```
-    `sudo apt-get install -y python3-pip` This line installs pip3. We need it to install pip modules.
-    `sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.
-    `wget ...` this line download githubrelease.py from this repo.
-    `script: python3 githubrelease.py "file1.zip" "file2.exe"` this line calls the githubrelease.py to upload files.
+    `sudo apt-get install -y python3-pip` This line installs pip3. We need it to install pip modules.  
+    `sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
+    `wget ...` this line download githubrelease.py from this repo.  
+    `script: python3 githubrelease.py "file1.zip" "file2.exe"` this line tells the githubrelease.py to upload files.  
