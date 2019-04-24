@@ -1,6 +1,4 @@
-## citools is "continuous integration (CI) tools"
-
-## QuickStart
+# citools is "continuous integration (CI) tools"
 
 ### githubrelease.py
 This script allows your Travis-CI build to upload files to a GitHub release.
