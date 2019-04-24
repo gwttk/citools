@@ -15,7 +15,7 @@ Now enter a mnemonic discription at "Token description", for example, "travis up
 If you plan to use githubrelease.py only on public repositories, then select "public_repo" scope.  
 However, if you want to use githubrelease.py on both public and private repositories, select "repo" scope.  
 Click "Generate token" button to finish creating the token.  
-Remember to copy your new personal access token now. You won’t be able to see it again!  
+Remember to copy your new personal access token when it's done. You won’t be able to see it again!  
 You may also regenerate a token if you forget it, but this means the old token will be invalid.
 
 1. Now githubrelease.py needs to access this token during the build.  
