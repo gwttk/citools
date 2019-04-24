@@ -18,6 +18,11 @@ Click "Generate token" button to finish creating the token.
 Remember to copy your new personal access token now. You won’t be able to see it again!  
 You may also regenerate a token if you forget it, but this means the old token will be invalid.
 
+1. Now githubrelease.py needs to access this token during the build. But you can't put it directly in .travis.yml file, because then everyone would see it, especially on a public repo.  
+A secure way is to put this token at Travis-CI's repository setting. You can read the docs [here](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings).  
+Simply put, go to this url: `https://travis-ci.com/<your_username>/<your_repo>/settings`, add an environment variable, whose name is "GITHUBTOKEN" and value is the token.  
+Remember to **DISABLE** "display value in build log" switch, otherwise anyone who sees your build log can steal your access token.
+
 1. add following to .travis.yml
 
 ```yaml
