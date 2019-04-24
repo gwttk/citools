@@ -25,22 +25,22 @@ Simply put, go to this url `https://travis-ci.com/<your_username>/<your_repo>/se
 Remember to **DISABLE** "display value in build log" switch, otherwise anyone who sees your build log can steal your access token.
 
 1. Now finally, edit your .travis.yml file, adding following configs. Explanation follows.
-```yaml
-before_install:
-    - sudo apt-get install -y python3-pip
-before_deploy:
-    # install PyGithub
-    - sudo pip3 install PyGithub
-    # download githubrelease.py
-    - wget https://raw.githubusercontent.com/Immueggpain/citools/master/githubrelease.py
-deploy:
-    provider: script
-    script: python3 githubrelease.py "file1.zip" "file2.exe"
-    skip_cleanup: true
-    on:
-        tags: true
-```
-`sudo apt-get install -y python3-pip` This line installs pip3. We need it to install pip modules.
-`sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.
-`wget ...` this line download githubrelease.py from this repo.
-`script: python3 githubrelease.py "file1.zip" "file2.exe"` this line calls the githubrelease.py to upload files.
+    ```yaml
+    before_install:
+        - sudo apt-get install -y python3-pip
+    before_deploy:
+        # install PyGithub
+        - sudo pip3 install PyGithub
+        # download githubrelease.py
+        - wget https://raw.githubusercontent.com/Immueggpain/citools/master/githubrelease.py
+    deploy:
+        provider: script
+        script: python3 githubrelease.py "file1.zip" "file2.exe"
+        skip_cleanup: true
+        on:
+            tags: true
+    ```
+    `sudo apt-get install -y python3-pip` This line installs pip3. We need it to install pip modules.
+    `sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.
+    `wget ...` this line download githubrelease.py from this repo.
+    `script: python3 githubrelease.py "file1.zip" "file2.exe"` this line calls the githubrelease.py to upload files.
