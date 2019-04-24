@@ -44,3 +44,10 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
     `sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
     `wget ...` This line downloads githubrelease.py.  
     `script: python3 githubrelease.py "file1.zip" "file2.exe"` This line tells the githubrelease.py to upload files.  
+
+1. Notice that we use `on:` `tags:true`. This means that githubrelease.py will only run after you publish a release.  
+Go to your github repo's release page and publish a release. A travis build will be triggered.  
+After a while, the build would finish and githubrelease.py will upload files to the release as assets. Congrats!
+
+1. There are many ways to customize the build/release process, the above method is just what I'm using.  
+If you have some questions or need a different approach, feel free to open an issue or even a PR.
