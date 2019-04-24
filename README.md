@@ -8,7 +8,8 @@ This script allows your Travis-CI build to upload files to a GitHub release.
 1. Before using this script, make sure that you've already set up Travis-CI corretly, and your builds are running fine.  
 If you've never used Travis-CI before, check its [website](https://docs.travis-ci.com/) for more info.
 
-1. Files in a github release are called assets. In order to upload assets, githubrelease.py needs some permission. This is done by providing a "github personal access token".  
+1. Files in a github release are called assets. In order to upload assets, githubrelease.py needs some permission.  
+This is done by providing a "github personal access token".  
 To create such token, visit github's [Personal access tokens page](https://github.com/settings/tokens), then click "Generate new token" button.  
 Now enter a mnemonic discription at "Token description", for example, "travis upload token".  
 If you plan to use githubrelease.py only on public repositories, then select "public_repo" scope.  
