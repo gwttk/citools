@@ -5,7 +5,7 @@ from github import Github
 repo_fullname =os.environ['TRAVIS_REPO_SLUG']
 tagname =os.environ['TRAVIS_TAG']
 
-g = Github(os.environ['GITHUBRTOKEN'])
+g = Github(os.environ['GITHUBTOKEN'])
 
 print('uploading to repo:',repo_fullname)
 repo = g.get_repo(repo_fullname)
