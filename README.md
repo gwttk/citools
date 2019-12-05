@@ -25,10 +25,11 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
 1. Now finally, edit your .travis.yml file, adding following configs. Explanation follows.
     ```yaml
     before_install:
-        - sudo apt-get install -y python3-pip
+        - pyenv shell 3.7.1
+        - pip3 install --upgrade pip
     before_deploy:
         # install PyGithub
-        - sudo pip3 install PyGithub
+        - pip3 install PyGithub
         # download githubrelease.py
         - wget https://raw.githubusercontent.com/Immueggpain/citools/master/githubrelease.py
     deploy:
@@ -38,8 +39,9 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
         on:
             tags: true
     ```
-    `sudo apt-get install -y python3-pip` This line installs pip3. We need it to install pip modules.  
-    `sudo pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
+    `pyenv shell 3.7.1` Since Travis-CI uses pyenv, this line set it to the correct version. Using 3.7.1 is faster because it's pre-installed by default.
+    `pip3 install --upgrade pip` This line installs/upgrades pip3. We need it to install pip modules.  
+    `pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
     `wget ...` This line downloads githubrelease.py.  
     `script: python3 githubrelease.py "file1.zip" "file2.exe"` This line tells the githubrelease.py to upload files.  
 
