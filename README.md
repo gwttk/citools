@@ -39,7 +39,7 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
         on:
             tags: true
     ```
-    `pyenv shell 3.7.1` Since Travis-CI uses pyenv, this line set it to the correct version. Using 3.7.1 is faster because it's pre-installed by default.
+    `pyenv shell 3.7.1` Since Travis-CI uses pyenv, this line set it to the correct version. Using 3.7.1 is faster because it's pre-installed by default.  
     `pip3 install --upgrade pip` This line installs/upgrades pip3. We need it to install pip modules.  
     `pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
     `wget ...` This line downloads githubrelease.py.  
