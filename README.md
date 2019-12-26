@@ -25,7 +25,7 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
 1. Now finally, edit your .travis.yml file, adding following configs. Explanation follows.
     ```yaml
     before_install:
-        - pyenv shell 3.7.1
+        - pyenv shell 3.7
         - pip3 install --upgrade pip
     before_deploy:
         # install PyGithub
@@ -39,8 +39,8 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
         on:
             tags: true
     ```
-    `pyenv shell 3.7.1` Since Travis-CI uses pyenv, this line sets it to the correct version. Using 3.7.1 is faster because it's pre-installed by default on Ubuntu Xenial 16.04.  
-    **NOTICE** if the OS is not Ubuntu Xenial 16.04, then maybe python 3.7.1 is not installed or even not available for installation. We can use `pvenv versions` to find out which are installed, and `pvenv install --list` to find out which can be installed, and `pyenv install x.x.x` to install a version.  
+    `pyenv shell 3.7` Since Travis-CI uses pyenv, this line sets it to the correct version. Using 3.7 is faster because it's pre-installed by default on Ubuntu Xenial 16.04.  
+    **NOTICE** if the OS is not Ubuntu Xenial 16.04, then maybe python 3.7 is not installed or even not available for installation. We can use `pvenv versions` to find out which are installed, and `pvenv install --list` to find out which can be installed, and `pyenv install x.x.x` to install a version.  
     `pip3 install --upgrade pip` This line installs/upgrades pip3. We need it to install pip modules.  
     `pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
     `wget ...` This line downloads githubrelease.py.  
