@@ -18,7 +18,8 @@ You may also regenerate a token if you forget it, but this means the old token w
 
 1. Now githubrelease.py needs to access this token during the build.  
 But you can't put it directly in .travis.yml file, because then everyone would see it, especially on a public repo.  
-A secure way is to put this token at Travis-CI's repository setting. You can read the details [here](https://docs.travis-ci.com/user/environment-variables/#defining-variables-in-repository-settings).  
+A secure way is to put this token at Travis-CI's repository setting. You can read the details [here](https://docs.travis-ci.com/user/
+ironment-variables/#defining-variables-in-repository-settings).  
 Simply put, go to this url `https://travis-ci.com/<your_username>/<your_repo>/settings`, add an environment variable, whose name is "GITHUBTOKEN" and value is the token.  
 Remember to **DISABLE** "display value in build log" switch, otherwise anyone who sees your build log can steal your access token.
 
@@ -40,7 +41,7 @@ Remember to **DISABLE** "display value in build log" switch, otherwise anyone wh
             tags: true
     ```
     `pyenv shell 3.7` Since Travis-CI uses pyenv, this line sets it to the correct version. Using 3.7 is faster because it's pre-installed by default on Ubuntu Xenial 16.04.  
-    **NOTICE** if the OS is not Ubuntu Xenial 16.04, then maybe python 3.7 is not installed or even not available for installation. We can use `pvenv versions` to find out which are installed, and `pvenv install --list` to find out which can be installed, and `pyenv install x.x.x` to install a version.  
+    **NOTICE** if the OS is not Ubuntu Xenial 16.04, then maybe python 3.7 is not installed or even not available for installation. We can use `pyenv versions` to find out which are installed, and `pyenv install --list` to find out which can be installed, and `pyenv install x.x.x` to install a version.  
     `pip3 install --upgrade pip` This line installs/upgrades pip3. We need it to install pip modules.  
     `pip3 install PyGithub` This line installs PyGithub, which is a lib of github's web api. githubrelease.py uses it.  
     `wget ...` This line downloads githubrelease.py.  
